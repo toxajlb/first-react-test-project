@@ -8,7 +8,7 @@ class EmployeesAddForm extends Component {
         super(props);
         this.state = {
             name: '',
-            salary: '',
+            salary: ''
         }
     }
 
@@ -20,7 +20,11 @@ class EmployeesAddForm extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.onAdd(this.state.name, this.state.salary);
+
+        if (this.state.name.length < 2 || !this.state.salary) 
+            return alert("Введите корректные данные");
+        
+            this.props.onAdd(this.state.name, this.state.salary);
         this.setState({
             name: '',
             salary: ''
@@ -42,13 +46,13 @@ class EmployeesAddForm extends Component {
                            placeholder="Как его зовут?"
                            name="name" 
                            value={name}
-                           onClick={this.onValueChange}/>
+                           onChange={this.onValueChange}/>
                     <input type="number"
                            className="form-control new-post-label"
                            placeholder="З/П в $?" 
                            name="salary"
                            value={salary}
-                           onClick={this.onValueChange}/>
+                           onChange={this.onValueChange}/>
     
                     <button type="submit"
                             className="btn btn-outline-light">Добавить</button>

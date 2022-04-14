@@ -13,15 +13,11 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [
-                {name: 'John', salary: 800, increase: false, rise: false, id: 1},
-                {name: 'Alex', salary: 3000, increase: true, rise: true, id: 2},
-                {name: 'Carl', salary: 5000, increase: false, rise: false, id: 3},
-            ],
+            data: [],
             term: '',
             filter:'all',
         };
-        this.maxId = 4;
+        this.maxId = 1;
     }
 
     addItem = (name, salary) => {

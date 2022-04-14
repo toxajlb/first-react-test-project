@@ -43,7 +43,7 @@ class EmployeesAddForm extends Component {
                     onSubmit={this.onSubmit}>
                     <input type="text"
                            className="form-control new-post-label"
-                           placeholder="Как его зовут?"
+                           placeholder="Инициалы"
                            name="name" 
                            value={name}
                            onChange={this.onValueChange}/>
